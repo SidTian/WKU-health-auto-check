@@ -4,6 +4,9 @@ import random
 import schedule
 import time
 path=r"/home/sidtian/桌面/auto check/chromedriver"
+# 填写WKU的账号和密码
+account = ""
+password = ""
 # http://chromedriver.storage.googleapis.com/index.html
 def check(): 
     browser = webdriver.Chrome(executable_path = path)
@@ -14,8 +17,8 @@ def check():
 
     time.sleep(2)
 
-    username = browser.find_element(By.ID, "usernameinput").send_keys("1196698")
-    password = browser.find_element(By.ID, "password").send_keys("Tian20020606")
+    username = browser.find_element(By.ID, "usernameinput").send_keys(account)
+    password = browser.find_element(By.ID, "password").send_keys(password)
     loginBtn = browser.find_element(By.ID, "submit_button").click()
 
     browser.get("https://once.wku.edu.cn:6006/iForm/04090919F476FB54248E27")
